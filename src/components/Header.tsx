@@ -16,7 +16,7 @@ export function Header() {
           </div>
         </div>
         <div className="hidden sm:mt-10 sm:flex lg:mt-0 lg:grow lg:basis-0 lg:justify-end">
-          <Button href="#">Entradas gratuitas</Button>
+          <Button href="https://lu.ma/xpmk9g1m?tk=hXb2gY">Entradas gratuitas</Button>
         </div>
       </Container>
     </header>

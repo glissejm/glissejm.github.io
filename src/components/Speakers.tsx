@@ -20,7 +20,7 @@ export function Speakers() {
                     <p className="mt-3 font-display text-2xl tracking-tight text-slate-900">
                         ¿Tienes una historia que inspire? ¿Un tema técnico que apasiona? ¿Un proyecto que te gustaría compartir? ¡Estamos buscando oradores para el evento!
                     </p>
-                    <Button href="#" className="mt-10 w-50">
+                    <Button href="https://bit.ly/speakersIWD2025" className="mt-10 w-50">
                         Postula ahora
                     </Button>
                 </div>
