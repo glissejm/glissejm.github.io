@@ -63,6 +63,9 @@ jobs:
       - name: Install missing Tailwind CSS module
         run: ${{ steps.detect-package-manager.outputs.manager }} add @tailwindcss/oxide-linux-x64-gnu
 
+      - name: Install sharp module
+        run: ${{ steps.detect-package-manager.outputs.manager }} add sharp
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
