@@ -4,25 +4,25 @@ import { Container } from "./Container";
 const volunteers = [
   {
     name: "Geovanni Leon",
-    role: "Ruby Peru Organizer",
+    role: "Ingeniero de Sistemas",
     image: "/images/4.png",
     linkedin: "https://www.linkedin.com/in/geovannileon/",
   },
   {
     name: "Pavel Puclla",
-    role: "Ruby Peru Organizer",
+    role: "Fundador de Se.Colectiva",
     image: "/images/1.png",
     linkedin: "https://www.linkedin.com/in/pavelpool/",
   },
   {
     name: "Catherine Vargas",
-    role: "Ruby Peru Organizer",
+    role: "Ingeniera de Sistemas",
     image: "/images/3.png",
     linkedin: "https://www.linkedin.com/in/catherine-vargas-huaman-6608b517a/",
   },
   {
     name: "Giancarlo Quispe",
-    role: "Ruby Peru Organizer",
+    role: "Full Stack Developer",
     image: "/images/2.png",
     linkedin: "https://www.linkedin.com/in/giancarlo-mirko/",
   },

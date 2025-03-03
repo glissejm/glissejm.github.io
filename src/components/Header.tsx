@@ -1,6 +1,4 @@
-//import { DiamondIcon } from './DiamondIcon'
 "use client";
-import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { useState } from "react";
 import Image from "next/image";
@@ -9,11 +7,11 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 flex-none lg:pt-11">
-      <Container className="flex flex-wrap items-center justify-between lg:flex-nowrap">
+    <header className="mt-10 flex justify-between items-center">
+      <Container className="flex flex-wrap items-center justify-between lg:flex-nowrap  w-full">
         {/* Logo */}
         <div className="flex items-center">
-          <Image src="/logo.png" alt="Logo" width={300} height={160} />
+          <Image src="/logo.png" alt="Logo" width={250} height={150} className="mr-3 w-56 sm:w-72 md:w-64 lg:w-64 h-auto" />
         </div>
 
         {/* Botón de menú móvil */}
@@ -30,7 +28,7 @@ export function Header() {
 
         {/* Menú de navegación SOLO en mobile */}
         <nav
-          className={`absolute top-16 left-0 w-full bg-white shadow-lg lg:hidden ${
+          className={`absolute top-[100px] z-50 left-0 w-full bg-white shadow-lg lg:hidden ${
             menuOpen ? "block" : "hidden"
           }`}
         >
@@ -56,10 +54,6 @@ export function Header() {
           </div>
         </nav>
 
-        {/* Botón de Registro (visible siempre en desktop) */}
-        <div className="hidden lg:block">
-          <Button href="https://lu.ma/xpmk9g1m?tk=hXb2gY">Regístrate ahora</Button>
-        </div>
       </Container>
     </header>
   );

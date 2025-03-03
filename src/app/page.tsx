@@ -5,13 +5,11 @@ import { Organizer } from "@/components/Organizer";
 import { Sponsors } from "@/components/Sponsors";
 import { Agenda } from "@/components/Agenda";
 import { Site } from "@/components/Site";
-import { Timer} from "@/components/Timer";
 
 export default function Home() {
   return (
-    <div>
+    <div id="main">
       <Hero />
-      <Timer />
       <Speakers />
       <Volunteer />
       <Organizer />

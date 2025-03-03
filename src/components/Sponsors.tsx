@@ -52,8 +52,8 @@ export function Sponsors() {
                         ¿Quieres ser patrocinador del evento?
                     </p>
                     <div className="mt-6 grid grid-cols-2 gap-4">
-                        <Button href="tel:+51951323544" className="w-full sm:w-auto">
-                            Contáctanos por Celular
+                        <Button href="https://wa.link/vqkjny" className="w-full sm:w-auto">
+                            Contáctanos por WhatsApp
                         </Button>
                         <Button href="mailto:wtmayacucho@gmail.com" className="w-full sm:w-auto">
                             Contáctanos por Correo

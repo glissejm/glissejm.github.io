@@ -10,7 +10,7 @@ const speakers = [
   },
   {
     name: "Maria Quilca",
-    role: "Ing. Sistemas WTM Ambasador",
+    role: "Ing. Sistemas | WTM Ambasador",
     image: "/images/8.png",
     linkedin: "https://www.linkedin.com/in/maria-del-carmen-quilca-sanchez-b80ba2229/",
   },
@@ -28,7 +28,7 @@ const speakers = [
   },
   {
     name: "Elinar Carrillo",
-    role: "Mag. Informática y Docente at UNSCH",
+    role: "Mag. Informática | Docente at UNSCH",
     image: "/images/9.png",
     linkedin: "https://www.linkedin.com/in/elinar-carrillo-riveros-77646173/",
   },
