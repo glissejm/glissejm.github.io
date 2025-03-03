@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { Container } from "./Container";
 
+interface Volunteer {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+}
+
 const volunteers = [
   {
     name: "Geovanni Leon",
@@ -39,7 +46,7 @@ const volunteers = [
             <p className="mt-3 text-2xl text-slate-900">Gracias a nuestros voluntarios</p>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
               {volunteers.map((volunteer, index) => (
-                <SpeakerCard key={`volunteer-${index}`} speaker={volunteer} />
+                <VolunteerCard key={`volunteer-${index}`} volunteer={volunteer} />
               ))}
             </div>
           </div>
@@ -48,23 +55,23 @@ const volunteers = [
     );
   }
   
-  function SpeakerCard({ speaker }) {
+  function VolunteerCard({ volunteer }: { volunteer: Volunteer }) {
     return (
       <div className="flex flex-col items-center text-center">
         <div className="ambassador-frame">
           <div className="ambassador-border"></div>
           <Image
             className="ambassador-photo rounded-full"
-            src={speaker.image}
-            alt={speaker.name}
+            src={volunteer.image}
+            alt={volunteer.name}
             width={200}
             height={200}
             priority
           />
         </div>
-        <h3 className="mt-3 text-xl font-semibold">{speaker.name}</h3>
-        <p className="text-slate-700">{speaker.role}</p>
-        <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
+        <h3 className="mt-3 text-xl font-semibold">{volunteer.name}</h3>
+        <p className="text-slate-700">{volunteer.role}</p>
+        <a href={volunteer.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
             alt="LinkedIn"

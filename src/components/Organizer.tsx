@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { Container } from "./Container";
 
+interface Organizer {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+}
+
 const organizers = [
   {
     name: "Glisse Jorge",
@@ -25,7 +32,7 @@ const organizers = [
             <p className="mt-3 text-2xl text-slate-900">Equipo de organización</p>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-15">
               {organizers.map((organizer, index) => (
-                <SpeakerCard key={`organizer-${index}`} speaker={organizer} />
+                <OrganizerCard key={`organizer-${index}`} organizer={organizer} />
               ))}
             </div>
           </div>
@@ -34,23 +41,23 @@ const organizers = [
     );
   }
   
-  function SpeakerCard({ speaker }) {
+  function OrganizerCard({ organizer }: { organizer: Organizer }) {
     return (
       <div className="flex flex-col items-center text-center">
         <div className="ambassador-frame">
           <div className="ambassador-border"></div>
           <Image
             className="ambassador-photo rounded-full"
-            src={speaker.image}
-            alt={speaker.name}
+            src={organizer.image}
+            alt={organizer.name}
             width={200}
             height={200}
             priority
           />
         </div>
-        <h3 className="mt-3 text-xl font-semibold">{speaker.name}</h3>
-        <p className="text-slate-700">{speaker.role}</p>
-        <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
+        <h3 className="mt-3 text-xl font-semibold">{organizer.name}</h3>
+        <p className="text-slate-700">{organizer.role}</p>
+        <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
             alt="LinkedIn"

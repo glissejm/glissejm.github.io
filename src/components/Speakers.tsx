@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { Container } from "./Container";
 
-const speakers = [
+interface Speaker {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+}
+
+const speakers: Speaker[] = [
   {
     name: "Luis Solis",
     role: "Senior Data Scientist at Prediqt",
@@ -63,7 +70,7 @@ const speakers = [
     );
   }
   
-  function SpeakerCard({ speaker }) {
+  function SpeakerCard({ speaker }: { speaker: Speaker }) {
     return (
       <div className="flex flex-col items-center text-center">
         <div className="ambassador-frame">

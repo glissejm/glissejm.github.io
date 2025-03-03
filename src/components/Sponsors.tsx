@@ -2,7 +2,14 @@ import Image from "next/image";
 import { Button } from "./Button";
 import { Container } from "./Container";
 
-const aliados = [
+interface Sponsor {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+}
+
+const aliados : Sponsor[] =[
     {
       name: "Incuba UNSCH",
       role: "",
@@ -38,7 +45,7 @@ export function Sponsors() {
                     <p className="mt-3 text-2xl text-slate-900">Nuestros aliados</p>
                     <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {aliados.map((aliado, index) => (
-                        <SpeakerCard key={`aliado-${index}`} speaker={aliado} />
+                        <SponsorCard key={`aliado-${index}`} sponsor={aliado} />
                     ))}
                     </div>
                     <h2
@@ -64,23 +71,23 @@ export function Sponsors() {
         </section>
     )
 }
-  function SpeakerCard({ speaker }) {
+  function SponsorCard({ sponsor } : { sponsor: Sponsor }) {
     return (
       <div className="flex flex-col items-center text-center">
         <div className="ambassador-frame">
           <div className="ambassador-border"></div>
           <Image
             className="ambassador-photo rounded-full"
-            src={speaker.image}
-            alt={speaker.name}
+            src={sponsor.image}
+            alt={sponsor.name}
             width={200}
             height={200}
             priority
           />
         </div>
-        <h3 className="mt-3 text-xl font-semibold">{speaker.name}</h3>
-        <p className="text-slate-700">{speaker.role}</p>
-        <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
+        <h3 className="mt-3 text-xl font-semibold">{sponsor.name}</h3>
+        <p className="text-slate-700">{sponsor.role}</p>
+        <a href={sponsor.linkedin} target="_blank" rel="noopener noreferrer" className="mt-2">
           <Image
             src="https://cdn-icons-png.flaticon.com/512/174/174848.png"
             alt="Facebook"

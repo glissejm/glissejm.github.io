@@ -70,7 +70,7 @@ export function Agenda() {
                         Agenda
                     </h2>
                     <p className="mt-3 font-display text-2xl tracking-tight text-slate-900">
-                        Conoce el programa de nuestro International Women's Day 2025
+                        Conoce el programa de nuestro International Women&apos;s Day 2025
                     </p>
                 </div>
 
