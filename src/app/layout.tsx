@@ -5,22 +5,25 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const openSans = Open_Sans({
-  display: 'swap',
-  subsets: [ 'latin' ],
-  weight: [ '400', '500', '700' ],
-  variable: '--font-open-sans'
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-open-sans",
 });
 
 const playfairDisplay = Playfair_Display({
-  display: 'swap',
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-playfair-display'
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {
   title: "IWD Ayacucho 2025",
   description: "© WTM Ayacucho",
+  icons: {
+    icon: "/logo.ico", // Agrega el favicon desde la carpeta public/
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" href="/logo.ico" sizes="any" />
+      </head>
       <body
         className={`${openSans.variable} ${playfairDisplay.variable} antialiased`}
       >
@@ -40,3 +46,4 @@ export default function RootLayout({
     </html>
   );
 }
+

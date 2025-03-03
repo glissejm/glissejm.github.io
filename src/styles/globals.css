@@ -17,3 +17,7 @@ body {
   background: var(--background);
   font-family: 'Open Sans', sans-serif;
 }
+
+.ambassadors-list{
+  color: #171717;
+}
