@@ -15,12 +15,12 @@ const speakers: Speaker[] = [
     image: "/images/6.png",
     linkedin: "https://www.linkedin.com/in/luisfernandosolisnavarro/",
   },
-  {
-    name: "Maria Quilca",
-    role: "Ing. Sistemas | WTM Ambasador",
-    image: "/images/8.png",
-    linkedin: "https://www.linkedin.com/in/maria-del-carmen-quilca-sanchez-b80ba2229/",
-  },
+  // {
+  //   name: "Maria Quilca",
+  //   role: "Ing. Sistemas | WTM Ambasador",
+  //   image: "/images/8.png",
+  //   linkedin: "https://www.linkedin.com/in/maria-del-carmen-quilca-sanchez-b80ba2229/",
+  // },
   {
     name: "Shirley Sosa",
     role: "UX Designer at BID",
