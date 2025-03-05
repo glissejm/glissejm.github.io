@@ -1,4 +1,5 @@
 import { Container } from "./Container";
+import Image from "next/image";
 
 export function Agenda() {
     const schedule = [
@@ -6,83 +7,117 @@ export function Agenda() {
             time: "8:30 AM - 9:00 AM",
             title: "Registro y Networking",
             description: "",
+            speakers: null,
         },
         {
-            time: "9:00 AM - 9:15 AM",
+            time: "9:15 AM - 10:00 AM",
             title: "Bienvenida e Inauguración al IWD Ayacucho 2025",
-            description:
-                "Moderadoras: Glisse Jorge y Sihomara Ochoa",
+            description: "",
+            speakers: [
+                { name: "Glisse Jorge", image: "/images/7.png" },
+                { name: "Sihomara Ochoa", image: "/images/12.png" }
+            ],
         },
         {
             time: "9:15 AM - 10:00 AM",
             title: "IA Generativa y Modelos de Lenguaje: Hacia una Inteligencia Artificial con Identidad Nacional",
-            description:
-                "Ponente: Luis Solis",
+            description: "",
+            speakers: [{ name: "Luis Solis", image: "/images/6.png" }],
         },
         {
             time: "10:00 AM - 10:15 AM",
-            title: "Educación y Determinación: El Camino para Romper Cadenas",
-            description:
-                "Ponente: Maria Quilca",
+            title: "Ignite",
+            description: "",
+            speakers: [{ name: "Catherine Vargas", image: "/images/3.png" }],
         },
         {
             time: "10:15 AM - 10:20 AM",
             title: "Break",
             description: "",
+            speakers: null,
         },
         {
             time: "10:20 AM - 11:05 AM",
             title: "Hecho es mejor que perfecto",
-            description: "Ponente: Shirley Sosa",
+            description: "",
+            speakers: [{ name: "Shirley Sosa", image: "/images/10.png" }],
         },
         {
-            time: "11:05 AM - 11:20 PM",
+            time: "11:05 AM - 11:20 AM",
             title: "Mujeres en las Startups",
-            description:
-                "Ponente: Andrea Guillén",
+            description: "",
+            speakers: [{ name: "Andrea Guillén", image: "/images/5.png" }],
         },
         {
             time: "11:35 AM - 12:20 PM",
             title: "IA en el Frontend: Cómo integrar modelos de Machine Learning en aplicaciones web",
-            description:
-                "Ponente: Yovany Romero",
+            description: "",
+            speakers: [{ name: "Yovany Romero", image: "/images/11.png" }],
         },
         {
-            time: "12:20 AM - 12:50 PM",
+            time: "12:20 PM - 12:50 PM",
             title: "Round Table: Mujeres que inspiran",
-            description:
-                "Ponentes: Elinar Carrillo, Yovany Romero y Shirley Sosa ",
+            description: "",
+            speakers: [
+                { name: "Elinar Carrillo", image: "/images/9.png" },
+                { name: "Yovany Romero", image: "/images/11.png" },
+                { name: "Shirley Sosa", image: "/images/10.png" }
+            ],
         },
     ];
 
     return (
-        <section
-            id="agenda"
-            aria-labelledby="agenda-title"
-            className="py-5 sm:py-10"
-        >
+        <section id="agenda" className="py-10 bg-gray-100">
             <Container>
-                <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2
-                        id="agenda-title"
-                        className="font-display text-5xl font-medium tracking-tighter text-blue-500 sm:text-5xl"
-                    >
-                        Agenda
-                    </h2>
-                    <p className="mt-3 font-display text-2xl tracking-tight text-slate-900">
-                        Conoce el programa de nuestro International Women&apos;s Day 2025
-                    </p>
+                <div className="text-center">
+                    <h2 className="text-4xl font-bold text-blue-600">Agenda del 15 de marzo</h2>
+                    <p className="text-lg text-gray-700">Women Techmakers Ayacucho</p>
                 </div>
 
-                {/* Lista de la agenda */}
-                <div className="mt-6">
+                <div className="mt-8 space-y-6">
                     {schedule.map((item, index) => (
-                        <div key={index} className="py-4 border-b last:border-none">
-                            <p className="text-gray-600 font-semibold">{item.time}</p>
-                            <h3 className="text-lg font-bold">{item.title}</h3>
-                            {item.description && (
-                                <p className="text-gray-500 text-sm mt-1">{item.description}</p>
-                            )}
+                        <div 
+                            key={index} 
+                            className={`rounded-lg shadow-md p-6 
+                            ${item.title === "Break" ? "bg-blue-200" : "bg-white"}`}
+                        >
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                                {/* Columna 1: Hora */}
+                                <div className="text-blue-600 font-semibold text-lg text-center md:text-left">
+                                    {item.time}
+                                </div>
+
+                                {/* Columna 2: Detalles */}
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                                    {item.description && (
+                                        <p className="text-gray-600">{item.description}</p>
+                                    )}
+                                </div>
+
+                                {/* Columna 3: Speakers (múltiples) */}
+                                {item.speakers ? (
+                                    <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                                        {item.speakers.map((speaker, i) => (
+                                            <div key={i} className="flex items-center space-x-3">
+                                                <Image
+                                                    src={speaker.image}
+                                                    alt={speaker.name}
+                                                    width={50}
+                                                    height={50}
+                                                    className="w-12 h-12 rounded-full object-cover"
+                                                />
+                                                <div>
+                                                    <p className="text-sm font-semibold text-gray-800">{speaker.name}</p>
+                                                    <p className="text-xs text-gray-500">Ponente</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div></div>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </div>
