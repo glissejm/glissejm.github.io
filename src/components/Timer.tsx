@@ -33,31 +33,28 @@ export function Timer() {
     }, [eventDate]);
 
     return (
-        <section className="flex items-center justify-center text-center px-5">
-            <div className="max-w-2xl">
-                <br />
-                <br />
-                <h2 className="text-4xl sm:text-5xl font-bold mb-4">¡Separa tu cupo antes que se agoten!</h2>
-                <p className="text-lg mb-6">
+        <section className="flex items-center justify-center text-center px-5 py-10 bg-white">
+            <div className="max-w-3xl">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-blue-700">
+                    ¡Separa tu cupo antes que se agoten!
+                </h2>
+                <p className="text-lg text-gray-700 mb-8">
                     Las entradas se están agotando rápidamente, ¡no te quedes sin la tuya! Asegura tu lugar antes de que sea demasiado tarde.
                 </p>
-                <div className="flex justify-center gap-4">
-                    <div className="bg-white text-blue-600 p-5 rounded-lg shadow-lg w-24">
-                        <p className="text-4xl font-bold">{timeLeft.days}</p>
-                        <span className="text-sm font-medium">Días</span>
-                    </div>
-                    <div className="bg-white text-blue-600 p-5 rounded-lg shadow-lg w-24">
-                        <p className="text-4xl font-bold">{timeLeft.hours}</p>
-                        <span className="text-sm font-medium">Horas</span>
-                    </div>
-                    <div className="bg-white text-blue-600 p-5 rounded-lg shadow-lg w-24">
-                        <p className="text-4xl font-bold">{timeLeft.minutes}</p>
-                        <span className="text-sm font-medium">Minutos</span>
-                    </div>
-                    <div className="bg-white text-blue-600 p-5 rounded-lg shadow-lg w-24">
-                        <p className="text-4xl font-bold">{timeLeft.seconds}</p>
-                        <span className="text-sm font-medium">Segundos</span>
-                    </div>
+
+                {/* Contenedor Responsivo del Timer */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center">
+                    {[
+                        { label: "Días", value: timeLeft.days },
+                        { label: "Horas", value: timeLeft.hours },
+                        { label: "Minutos", value: timeLeft.minutes },
+                        { label: "Segundos", value: timeLeft.seconds },
+                    ].map((item, index) => (
+                        <div key={index} className="bg-gray-100 text-blue-600 p-6 rounded-lg shadow-md w-full">
+                            <p className="text-4xl md:text-5xl font-bold">{item.value}</p>
+                            <span className="text-sm md:text-base font-medium">{item.label}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
