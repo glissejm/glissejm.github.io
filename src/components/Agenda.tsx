@@ -10,7 +10,7 @@ export function Agenda() {
             speakers: null,
         },
         {
-            time: "9:15 AM - 10:00 AM",
+            time: "9:00 AM - 9:15 AM",
             title: "Bienvenida e Inauguración al IWD Ayacucho 2025",
             description: "",
             speakers: [
@@ -26,24 +26,29 @@ export function Agenda() {
         },
         {
             time: "10:00 AM - 10:15 AM",
-            title: "Ignite",
+            title: "Charlas Ignite",
             description: "",
-            speakers: [{ name: "Catherine Vargas", image: "/images/3.png" }],
+            speakers: [
+                { name: "Yovany Romero", image: "/images/11.png" },
+                { name: "Glisse Jorge", image: "/images/7.png" },
+                { name: "Sihomara Ochoa", image: "/images/12.png" }
+            ],
+            
         },
         {
-            time: "10:15 AM - 10:20 AM",
+            time: "10:15 AM - 10:25 AM",
             title: "Break",
             description: "",
             speakers: null,
         },
         {
-            time: "10:20 AM - 11:05 AM",
+            time: "10:25 AM - 11:10 AM",
             title: "Hecho es mejor que perfecto",
             description: "",
             speakers: [{ name: "Shirley Sosa", image: "/images/10.png" }],
         },
         {
-            time: "11:05 AM - 11:20 AM",
+            time: "11:10 AM - 11:25 AM",
             title: "Mujeres en las Startups",
             description: "",
             speakers: [{ name: "Andrea Guillén", image: "/images/5.png" }],
@@ -64,6 +69,12 @@ export function Agenda() {
                 { name: "Shirley Sosa", image: "/images/10.png" }
             ],
         },
+        {
+            time: "12:50 PM - 1:00 PM",
+            title: "Cierre",
+            description: "",
+            speakers: null,
+        }
     ];
 
     return (
@@ -79,7 +90,7 @@ export function Agenda() {
                         <div 
                             key={index} 
                             className={`rounded-lg shadow-md p-6 
-                            ${item.title === "Break" ? "bg-blue-200" : "bg-white"}`}
+                            ${item.title === "Break" || item.title === "Cierre" || item.title === "Registro y Networking" ? "bg-blue-200" : "bg-white"}`}
                         >
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                                 {/* Columna 1: Hora */}

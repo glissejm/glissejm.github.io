@@ -22,7 +22,7 @@ export function Hero() {
             <span className="text-slate-800">Redefine </span>Possible
           </h1>
           <p className="mt-6 text-2xl tracking-tight text-slate-800">
-            International Women&apos;s Day 2025
+            International Women&apos;s Day Ayacucho 2025
           </p>
           <Timer />
           <div className="flex justify-center mt-10">
