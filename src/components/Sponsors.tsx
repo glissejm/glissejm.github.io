@@ -28,6 +28,12 @@ const aliados : Sponsor[] =[
       image: "/images/cactus.png",
       linkedin: "https://www.facebook.com/cactusysuculentasAyacucho",
     },
+    {
+      name: "Municipalidad Provincial de Huamanga",
+      role: "",
+      image: "/images/muni.jpg",
+      linkedin: "https://www.facebook.com/munihuamanga",
+    },
   ];
 
 export function Sponsors() {
@@ -43,7 +49,7 @@ export function Sponsors() {
                     <h2 className="mt-12 font-display text-5xl font-medium text-blue-500">
                         Aliados</h2>
                     <p className="mt-3 text-2xl text-slate-900">Nuestros aliados</p>
-                    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                     {aliados.map((aliado, index) => (
                         <SponsorCard key={`aliado-${index}`} sponsor={aliado} />
                     ))}
