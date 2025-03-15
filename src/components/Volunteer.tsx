@@ -33,6 +33,12 @@ const volunteers = [
     image: "/images/2.png",
     linkedin: "https://www.linkedin.com/in/giancarlo-mirko/",
   },
+  {
+    name: "Junior Pariona",
+    role: "Data Analyst",
+    image: "/images/15.png",
+    linkedin: "https://www.linkedin.com/in/junior-flavio-pariona/",
+  },
 ];
 
 
@@ -44,7 +50,7 @@ const volunteers = [
           <div className="mx-auto max-w-6xl text-center">
             <h2 className="mt-12 font-display text-5xl font-medium text-blue-500">Voluntarios</h2>
             <p className="mt-3 text-2xl text-slate-900">Gracias a nuestros voluntarios</p>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {volunteers.map((volunteer, index) => (
                 <VolunteerCard key={`volunteer-${index}`} volunteer={volunteer} />
               ))}
