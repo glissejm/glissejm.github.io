@@ -24,14 +24,15 @@ export function Sponsors() {
               Invierte en el Futuro Tech de Ayacucho
             </h2>
             <p className="text-xl sm:text-2xl text-slate-700 max-w-3xl mx-auto">
-              Tu marca frente a <span className="font-bold text-blue-600">100+ profesionales tech</span> con inversión desde <span className="font-bold text-cyan-600">S/ 100</span>
+              Tu marca frente a <span className="font-bold text-blue-600">100+ profesionales tech</span> 
+              <br /> con inversión desde <span className="font-bold text-cyan-600">S/ 100</span>
             </p>
           </div>
 
-          {/* Stats del impacto 2025 */}
+          {/* Stats del impacto 2026 */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { number: "50+", label: "Asistentes 2025", icon: "👥" },
+              { number: "50+", label: "Asistentes 2026", icon: "👥" },
               { number: "80%", label: "Mujeres tech", icon: "👩‍💻" },
               { number: "100%", label: "Sponsors satisfechos", icon: "⭐" },
               { number: "5,000+", label: "Alcance en RRSS", icon: "📱" }
@@ -73,8 +74,8 @@ export function Sponsors() {
                 {/* Badge de confianza */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-4 text-center">
                   <div className="text-green-600 font-bold text-lg mb-1">✓ Evento Verificado</div>
-                  <div className="text-sm text-slate-600">Respaldo Google Developers</div>
-                  <div className="text-xs text-slate-500 mt-2">IWD 2025: 100% satisfacción</div>
+                  <div className="text-sm text-slate-600">Respaldo Technovation</div>
+                  <div className="text-xs text-slate-500 mt-2">IWD 2026: 100% satisfacción</div>
                 </div>
               </div>
 
@@ -84,7 +85,7 @@ export function Sponsors() {
                   ¿Por qué ser sponsor del IWD 2026?
                 </h3>
                 <p className="text-base sm:text-lg text-slate-600 mb-6 leading-relaxed">
-                  Empresas como <span className="font-semibold text-blue-600">Tiyapuy, Alinti y Cámara de Comercio</span> ya confirmaron. 
+                  Empresas como <span className="font-semibold text-blue-600">Municipalidad Provincial de Humanaga, SeColectiva e Incuba UNSCH</span> fueron parte el año pasado, este año sé parte de los sponsors. 
                   <span className="block mt-2 text-cyan-600 font-semibold">Tu marca puede ser la próxima.</span>
                 </p>
 
@@ -206,7 +207,7 @@ export function Sponsors() {
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
-                        MÁS ELEGIDO 2025
+                        MÁS ELEGIDO 2026
                       </span>
                     </div>
                   )}
@@ -287,7 +288,7 @@ export function Sponsors() {
                   </div>
                   <div className="h-4 w-px bg-slate-300"></div>
                   <p className="text-blue-600 font-semibold text-sm">
-                    Gerente de Marketing, Sponsor IWD 2025
+                    Gerente de Marketing, Sponsor IWD 2026
                   </p>
                 </div>
               </div>
