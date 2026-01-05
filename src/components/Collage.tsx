@@ -246,7 +246,7 @@ export function Collage() {
                 <p className="text-sm mb-4 opacity-90">Ver fotos del evento</p>
                 <div 
                   className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-50 transition-colors"
-                  onClick={() => setSelectedImage(0)}
+                  onClick={() => window.open('https://photos.app.goo.gl/qp148rKrwZpJHJ3Z8', '_blank')}
                 >
                   <span>Explorar</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
