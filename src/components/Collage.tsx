@@ -22,7 +22,7 @@ export function Collage() {
     },
     {
       id: 2,
-      image: "/images/IMG_2.jpg", // Ruta correcta desde public/
+      image: "/images/IMG_4.jpg", // Ruta correcta desde public/
       title: "Panel de Expertas",
       description: "11 speakers compartiendo conocimiento",
       category: "speakers",
@@ -30,7 +30,7 @@ export function Collage() {
     },
     {
       id: 3,
-      image: "/images/IMG_3.jpg", // Ruta correcta desde public/
+      image: "/images/IMG_2.jpg", // Ruta correcta desde public/
       title: "Networking Tech",
       description: "Conexiones que transforman carreras",
       category: "networking",
@@ -38,7 +38,7 @@ export function Collage() {
     },
     {
       id: 4,
-      image: "/images/IMG_1.jpg", // MISMA RUTA - cambia esta imagen si tienes más
+      image: "/images/IMG_5.jpg", // MISMA RUTA - cambia esta imagen si tienes más
       title: "Workshop Práctico",
       description: "Talleres de IA y desarrollo",
       category: "workshop",
@@ -46,7 +46,7 @@ export function Collage() {
     },
     {
       id: 5,
-      image: "/images/IMG_2.jpg", // MISMA RUTA - cambia esta imagen si tienes más
+      image: "/images/IMG_6.jpg", // MISMA RUTA - cambia esta imagen si tienes más
       title: "Sponsors en Acción",
       description: "Marcas que apoyan la diversidad",
       category: "sponsors",
