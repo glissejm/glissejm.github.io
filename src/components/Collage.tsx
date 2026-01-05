@@ -8,12 +8,13 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 
 export function Collage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
 
-  // Array de fotos del evento 2025 - Actualiza con tus imágenes reales
+  // Array de fotos del evento 2025 - TODAS CON LA MISMA RUTA
   const photos = [
     {
       id: 1,
-      image: "/images/IMG_1.jpg", // Ruta real de imagen
+      image: "/images/IMG_1.jpg", // Ruta correcta desde public/
       title: "Inauguración IWD 2025",
       description: "50+ asistentes en el evento principal",
       category: "keynote",
@@ -21,7 +22,7 @@ export function Collage() {
     },
     {
       id: 2,
-      image: "/images/IMG_2.jpg",
+      image: "/images/IMG_2.jpg", // Ruta correcta desde public/
       title: "Panel de Expertas",
       description: "11 speakers compartiendo conocimiento",
       category: "speakers",
@@ -29,7 +30,7 @@ export function Collage() {
     },
     {
       id: 3,
-      image: "/images/IMG_3.jpg",
+      image: "/images/IMG_3.jpg", // Ruta correcta desde public/
       title: "Networking Tech",
       description: "Conexiones que transforman carreras",
       category: "networking",
@@ -37,7 +38,7 @@ export function Collage() {
     },
     {
       id: 4,
-      image: "/public/images/IMG_1.jpg",
+      image: "/images/IMG_1.jpg", // MISMA RUTA - cambia esta imagen si tienes más
       title: "Workshop Práctico",
       description: "Talleres de IA y desarrollo",
       category: "workshop",
@@ -45,7 +46,7 @@ export function Collage() {
     },
     {
       id: 5,
-      image: "/public/images/IMG_2.jpg",
+      image: "/images/IMG_2.jpg", // MISMA RUTA - cambia esta imagen si tienes más
       title: "Sponsors en Acción",
       description: "Marcas que apoyan la diversidad",
       category: "sponsors",
@@ -53,7 +54,7 @@ export function Collage() {
     },
     {
       id: 6,
-      image: "/public/images/IMG_3.jpg",
+      image: "/images/IMG_3.jpg", // MISMA RUTA - cambia esta imagen si tienes más
       title: "Comunidad WTM",
       description: "80% participación femenina",
       category: "community",
@@ -76,6 +77,11 @@ export function Collage() {
     workshop: "💡",
     sponsors: "🏢",
     community: "🌟"
+  };
+
+  // Manejar error de carga de imagen
+  const handleImageError = (id: number) => {
+    setImageErrors(prev => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -127,16 +133,25 @@ export function Collage() {
               className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform hover:scale-[1.02] transition-all duration-500"
               onClick={() => setSelectedImage(0)}
             >
-              <div className={`relative h-full min-h-[400px] bg-gradient-to-br ${photos[0].color}`}>
-                {/* Imagen real o placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <div className="text-6xl mb-4">{categoryIcons[photos[0].category]}</div>
-                    <h3 className="text-3xl font-bold mb-2">{photos[0].title}</h3>
-                    <p className="text-lg opacity-90">{photos[0].description}</p>
-                    <p className="text-sm mt-4 opacity-75">🖼️ Añadir imagen real</p>
+              <div className="relative h-full min-h-[400px]">
+                {/* Imagen REAL */}
+                {!imageErrors[1] ? (
+                  <img 
+                    src={photos[0].image}
+                    alt={photos[0].title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={() => handleImageError(1)}
+                  />
+                ) : (
+                  <div className={`absolute inset-0 bg-gradient-to-br ${photos[0].color} flex items-center justify-center`}>
+                    <div className="text-center text-white p-8">
+                      <div className="text-6xl mb-4">{categoryIcons[photos[0].category]}</div>
+                      <h3 className="text-3xl font-bold mb-2">{photos[0].title}</h3>
+                      <p className="text-lg opacity-90">{photos[0].description}</p>
+                    </div>
                   </div>
-                </div>
+                )}
+                
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="text-white">
@@ -154,19 +169,29 @@ export function Collage() {
             {/* Medium images - span 2 columns each */}
             {[1, 2].map((idx) => (
               <div 
-                key={idx}
+                key={photos[idx].id}
                 className="md:col-span-2 group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform hover:scale-[1.02] transition-all duration-500"
                 onClick={() => setSelectedImage(idx)}
               >
-                <div className={`relative h-full min-h-[195px] bg-gradient-to-br ${photos[idx].color}`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white p-6">
-                      <div className="text-4xl mb-3">{categoryIcons[photos[idx].category]}</div>
-                      <h3 className="text-xl font-bold mb-1">{photos[idx].title}</h3>
-                      <p className="text-sm opacity-90">{photos[idx].description}</p>
-                      <p className="text-xs mt-2 opacity-75">🖼️ Añadir imagen real</p>
+                <div className="relative h-full min-h-[195px]">
+                  {/* Imagen REAL */}
+                  {!imageErrors[photos[idx].id] ? (
+                    <img 
+                      src={photos[idx].image}
+                      alt={photos[idx].title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      onError={() => handleImageError(photos[idx].id)}
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${photos[idx].color} flex items-center justify-center`}>
+                      <div className="text-center text-white p-6">
+                        <div className="text-4xl mb-3">{categoryIcons[photos[idx].category]}</div>
+                        <h3 className="text-xl font-bold mb-1">{photos[idx].title}</h3>
+                        <p className="text-sm opacity-90">{photos[idx].description}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="text-white">
                       <h3 className="text-lg font-bold mb-1">{photos[idx].title}</h3>
@@ -180,19 +205,29 @@ export function Collage() {
             {/* Small images - regular grid */}
             {[3, 4, 5].map((idx) => (
               <div 
-                key={idx}
+                key={photos[idx].id}
                 className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform hover:scale-105 transition-all duration-500"
                 onClick={() => setSelectedImage(idx)}
               >
-                <div className={`relative h-full min-h-[195px] bg-gradient-to-br ${photos[idx].color}`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white p-4">
-                      <div className="text-3xl mb-2">{categoryIcons[photos[idx].category]}</div>
-                      <h3 className="text-base font-bold mb-1">{photos[idx].title}</h3>
-                      <p className="text-xs opacity-90">{photos[idx].description}</p>
-                      <p className="text-xs mt-2 opacity-75">🖼️ Imagen real</p>
+                <div className="relative h-full min-h-[195px]">
+                  {/* Imagen REAL */}
+                  {!imageErrors[photos[idx].id] ? (
+                    <img 
+                      src={photos[idx].image}
+                      alt={photos[idx].title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      onError={() => handleImageError(photos[idx].id)}
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${photos[idx].color} flex items-center justify-center`}>
+                      <div className="text-center text-white p-4">
+                        <div className="text-3xl mb-2">{categoryIcons[photos[idx].category]}</div>
+                        <h3 className="text-base font-bold mb-1">{photos[idx].title}</h3>
+                        <p className="text-xs opacity-90">{photos[idx].description}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <div className="text-white">
                       <h3 className="text-sm font-bold">{photos[idx].title}</h3>
@@ -293,9 +328,20 @@ export function Collage() {
             </button>
             <div className="bg-white rounded-2xl p-8 max-h-[80vh] overflow-y-auto">
               <div className="text-center">
-                <div className={`text-6xl mb-4 p-8 rounded-2xl bg-gradient-to-br ${photos[selectedImage].color}`}>
-                  {categoryIcons[photos[selectedImage].category]}
-                </div>
+                {/* Imagen en el modal */}
+                {!imageErrors[photos[selectedImage].id] ? (
+                  <div className="mb-6">
+                    <img 
+                      src={photos[selectedImage].image}
+                      alt={photos[selectedImage].title}
+                      className="w-full h-auto max-h-[400px] object-cover rounded-2xl"
+                    />
+                  </div>
+                ) : (
+                  <div className={`text-6xl mb-4 p-8 rounded-2xl bg-gradient-to-br ${photos[selectedImage].color}`}>
+                    {categoryIcons[photos[selectedImage].category]}
+                  </div>
+                )}
                 <h3 className="text-3xl font-bold text-slate-800 mb-2">{photos[selectedImage].title}</h3>
                 <p className="text-lg text-slate-600 mb-4">{photos[selectedImage].description}</p>
                 <div className="text-sm text-slate-500 p-4 bg-slate-50 rounded-lg">
@@ -303,7 +349,9 @@ export function Collage() {
                   <code className="bg-slate-200 px-3 py-1 rounded">
                     {photos[selectedImage].image}
                   </code>
-                  <p className="mt-2">Reemplazar con foto real del IWD 2025</p>
+                  {imageErrors[photos[selectedImage].id] && (
+                    <p className="mt-2 text-red-500">⚠️ La imagen no se pudo cargar. Verifica la ruta.</p>
+                  )}
                 </div>
               </div>
             </div>
