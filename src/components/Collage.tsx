@@ -278,7 +278,7 @@ export function Collage() {
               <div>
                 <p className="font-semibold mb-1">1. Reemplaza las rutas:</p>
                 <code className="bg-slate-800 text-white px-2 py-1 rounded text-xs">
-                  image: "/images/iwd2025/inauguracion.jpg"
+                  image: &quot;/images/iwd2025/inauguracion.jpg&quot;
                 </code>
               </div>
               <div>
