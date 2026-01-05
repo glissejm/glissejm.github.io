@@ -37,7 +37,7 @@ export function Collage() {
     },
     {
       id: 4,
-      image: "/images/IMG_1.jpg",
+      image: "/public/images/IMG_1.jpg",
       title: "Workshop Práctico",
       description: "Talleres de IA y desarrollo",
       category: "workshop",
@@ -45,7 +45,7 @@ export function Collage() {
     },
     {
       id: 5,
-      image: "/images/iwd2025/sponsors.jpg",
+      image: "/public/images/IMG_2.jpg",
       title: "Sponsors en Acción",
       description: "Marcas que apoyan la diversidad",
       category: "sponsors",
@@ -53,7 +53,7 @@ export function Collage() {
     },
     {
       id: 6,
-      image: "/images/iwd2025/comunidad.jpg",
+      image: "/public/images/IMG_3.jpg",
       title: "Comunidad WTM",
       description: "80% participación femenina",
       category: "community",
