@@ -19,7 +19,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "IWD Ayacucho 2025",
+  title: "IWD Ayacucho 2026",
   description: "© WTM Ayacucho",
   icons: {
     icon: "/logo.ico", // Agrega el favicon desde la carpeta public/
