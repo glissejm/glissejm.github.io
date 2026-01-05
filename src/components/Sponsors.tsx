@@ -1,8 +1,4 @@
-import React from 'react';
-
-const Container = ({ children }: { children: React.ReactNode }) => (
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
-);
+import { Container } from "./Container";
 
 export function Sponsors() {
   return (
@@ -277,9 +273,9 @@ export function Sponsors() {
               </div>
               <div className="flex-1">
                 <p className="text-lg text-slate-700 italic mb-4 leading-relaxed">
-                  "La inversión de S/ 200 nos generó visibilidad que costaría S/ 1,000+ en publicidad tradicional. 
+                  &ldquo;La inversión de S/ 200 nos generó visibilidad que costaría S/ 1,000+ en publicidad tradicional. 
                   Conectamos con talento tech femenino que ahora trabaja con nosotros. 
-                  <span className="font-semibold text-blue-700"> Lo más valioso: la seriedad del equipo organizador.</span>"
+                  <span className="font-semibold text-blue-700"> Lo más valioso: la seriedad del equipo organizador.</span>&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1">
