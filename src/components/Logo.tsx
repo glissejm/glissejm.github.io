@@ -25,8 +25,8 @@ export function Logo({
             'left-full',
         )}
         src={logoImage}
-        alt=""
-        width={200}
+        alt="https://www.technovation.org/women-techmakers/"
+        width={600}
         style={{ height: 'auto' }}
         priority
         unoptimized

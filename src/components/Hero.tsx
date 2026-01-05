@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import Image from 'next/image'
@@ -7,43 +9,116 @@ import { FaArrowDown } from 'react-icons/fa'
 
 export function Hero() {
   return (
-    <section id="hero" className="relative py-5 sm:py-10 min-h-screen flex items-center">
+    <section id="hero" className="relative py-5 sm:py-10 min-h-screen flex items-center bg-gradient-to-b from-white via-blue-50/30 to-cyan-50/30">
       {/* Imágenes decorativas a los lados */}
-      <div className="absolute left-0 top-0 hidden lg:flex items-center translate-y-8">
+      <div className="absolute left-0 top-0 hidden lg:flex items-center translate-y-8 opacity-80">
         <Image src="/izquierda.png" alt="Decoración izquierda" width={180} height={780}  /> 
       </div>
-      <div className="absolute right-0 top-0 hidden lg:flex items-center transform rotate-180 translate-y-8">
-        <Image src="/izquierda.png" alt="Decoración izquierda" width={180} height={780}  /> 
+      <div className="absolute right-0 top-0 hidden lg:flex items-center transform rotate-180 translate-y-8 opacity-80">
+        <Image src="/izquierda.png" alt="Decoración derecha" width={180} height={780}  /> 
       </div>
+
+      {/* Elementos decorativos adicionales con colores WTM */}
+      <div className="absolute top-20 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+      <div className="absolute top-40 right-1/4 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
       
-      <Container className="mx-auto relative">
+      <Container className="mx-auto relative z-10">
         <div className="lg:px-12 text-left">
-          <h1 className="font-display text-5xl font-bold tracking-tighter text-blue-500 sm:text-7xl">
-            <span className="text-slate-800">Redefine </span>Possible
+          {/* Badge superior */}
+          {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 px-4 py-2 rounded-full mb-6 border border-blue-200">
+            <span className="font-semibold">👩‍💻</span>
+            <span className="font-semibold text-sm">Women Techmakers Ayacucho</span>
+          </div> */}
+
+          {/* Título principal */}
+          <h1 className="font-display text-5xl font-bold tracking-tighter sm:text-7xl">
+            <span className="text-slate-800">Break the </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+              Pattern
+            </span>
           </h1>
-          <p className="mt-6 text-2xl tracking-tight text-slate-800">
-            International Women&apos;s Day Ayacucho 2025
+
+          {/* Subtítulo */}
+          <p className="mt-6 text-2xl tracking-tight text-slate-700 font-medium">
+            International Women&apos;s Day Ayacucho 2026
           </p>
+
+          {/* Información del evento */}
+          <div className="mt-6 flex flex-wrap gap-4 text-slate-600">
+            <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm border border-cyan-100">
+              <span className="text-xl">📅</span>
+              <span className="font-medium">Sábado 7 de Marzo, 2026</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm border border-cyan-100">
+              <span className="text-xl">⏰</span>
+              <span className="font-medium">8:30 AM</span>
+            </div>
+            {/* <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm border border-cyan-100">
+              <span className="text-xl">📍</span>
+              <span className="font-medium">Auditorio CASE, Huamanga</span>
+            </div> */}
+          </div>
+
+          {/* Timer */}
           <Timer />
+
+          {/* Botón de registro */}
           <div className="flex justify-center mt-10">
-            <Button href="https://lu.ma/xpmk9g1m?tk=hXb2gY" className="w-50 inline-block px-6 py-3 text-lg font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-transform transform hover:scale-105" target="href_blank">
-              ¡Registrarse!
+            <Button 
+              href="https://forms.gle/cf6kCuWJjGyxXoW47" 
+              className="group relative inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:from-blue-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl" 
+              target="_blank"
+            >
+              <span>¡Registrarse!</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
           </div>
-          <div className="flex justify-center mt-10">
-            <div className="w-full max-w-xs">
-              <Image src="/board.gif" alt="Decoración derecha" layout="responsive" width={400} height={780} />
+
+          {/* Mensaje motivacional */}
+          <div className="mt-8 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border-l-4 border-blue-600 shadow-sm">
+              <p className="text-slate-700 text-center italic">
+                "Es momento de romper patrones, ocupar espacios donde no nos esperaban y reescribir las reglas del futuro tech."
+              </p>
             </div>
           </div>
+
+          {/* Espaciado */}
+          <div className="mt-12"></div>
+
+          {/* Flecha de scroll */}
           <div className="flex justify-center">
             <Link href="#speakers" legacyBehavior>
-              <a className="inline-block p-3 text-lg font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-transform transform hover:scale-105">
+              <a className="inline-flex items-center justify-center w-14 h-14 text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:from-blue-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl animate-bounce">
                 <FaArrowDown className="w-6 h-6" />
               </a>
             </Link>
           </div>
         </div>
       </Container>
+
+      <style jsx>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+      `}</style>
     </section>
   )
 }
