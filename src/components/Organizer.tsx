@@ -17,7 +17,7 @@ const organizers: Organizer[] = [
   },
   {
     name: "Sihomara Ochoa",
-    role: "Bach. Ing. Sistemas | WTM Ambasador",
+    role: "Msc. Ing. Software | WTM Ambasador",
     image: "/images/12.png",
     linkedin: "https://www.linkedin.com/in/sihomara-sandy-ochoa-cisneros/",
   },
