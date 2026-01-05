@@ -24,12 +24,6 @@ export function Hero() {
       
       <Container className="mx-auto relative z-10">
         <div className="lg:px-12 text-left">
-          {/* Badge superior */}
-          {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 px-4 py-2 rounded-full mb-6 border border-blue-200">
-            <span className="font-semibold">👩‍💻</span>
-            <span className="font-semibold text-sm">Women Techmakers Ayacucho</span>
-          </div> */}
-
           {/* Título principal */}
           <h1 className="font-display text-5xl font-bold tracking-tighter sm:text-7xl">
             <span className="text-slate-800">Break the </span>
@@ -53,10 +47,6 @@ export function Hero() {
               <span className="text-xl">⏰</span>
               <span className="font-medium">8:30 AM</span>
             </div>
-            {/* <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm border border-cyan-100">
-              <span className="text-xl">📍</span>
-              <span className="font-medium">Auditorio CASE, Huamanga</span>
-            </div> */}
           </div>
 
           {/* Timer */}
@@ -78,7 +68,7 @@ export function Hero() {
           <div className="mt-8 max-w-2xl mx-auto">
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border-l-4 border-blue-600 shadow-sm">
               <p className="text-slate-700 text-center italic">
-                "Es momento de romper patrones, ocupar espacios donde no nos esperaban y reescribir las reglas del futuro tech."
+                &quot;Es momento de romper patrones, ocupar espacios donde no nos esperaban y reescribir las reglas del futuro tech.&quot;
               </p>
             </div>
           </div>

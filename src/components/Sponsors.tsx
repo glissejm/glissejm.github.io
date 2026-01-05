@@ -1,4 +1,3 @@
-
 import { Container } from "./Container";
 
 export function Sponsors() {
@@ -159,8 +158,8 @@ export function Sponsors() {
           <div className="mt-12 text-center max-w-3xl mx-auto">
             <div className="bg-cyan-50 rounded-2xl p-8 border-l-4 border-blue-600">
               <p className="text-lg text-slate-700 italic mb-4">
-                'Cada sponsor nos ayuda a romper barreras y crear oportunidades para que más mujeres 
-                lideren el futuro de la tecnología.'
+                &apos;Cada sponsor nos ayuda a romper barreras y crear oportunidades para que más mujeres 
+                lideren el futuro de la tecnología.&apos;
               </p>
               <p className="text-blue-600 font-semibold">
                 — Women Techmakers Ayacucho
