@@ -344,7 +344,7 @@ export function Collage() {
                 )}
                 <h3 className="text-3xl font-bold text-slate-800 mb-2">{photos[selectedImage].title}</h3>
                 <p className="text-lg text-slate-600 mb-4">{photos[selectedImage].description}</p>
-                <div className="text-sm text-slate-500 p-4 bg-slate-50 rounded-lg">
+                {/* <div className="text-sm text-slate-500 p-4 bg-slate-50 rounded-lg">
                   <p className="font-semibold mb-2">📁 Ruta de imagen configurada:</p>
                   <code className="bg-slate-200 px-3 py-1 rounded">
                     {photos[selectedImage].image}
@@ -352,7 +352,7 @@ export function Collage() {
                   {imageErrors[photos[selectedImage].id] && (
                     <p className="mt-2 text-red-500">⚠️ La imagen no se pudo cargar. Verifica la ruta.</p>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
