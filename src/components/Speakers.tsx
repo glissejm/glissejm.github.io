@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { Container } from "./Container";
 
 export function Speakers() {
@@ -133,8 +133,8 @@ export function Speakers() {
           <div className="mt-12 text-center max-w-3xl mx-auto">
             <div className="bg-cyan-50 rounded-2xl p-8 border-l-4 border-blue-600">
               <p className="text-lg text-slate-700 italic mb-4">
-                "Break The Pattern significa romper el silencio. Tu voz importa, tu experiencia cuenta, 
-                y tu historia puede cambiar la trayectoria de alguien más."
+                &quot;Break The Pattern significa romper el silencio. Tu voz importa, tu experiencia cuenta, 
+                y tu historia puede cambiar la trayectoria de alguien más.&quot;
               </p>
               <p className="text-blue-600 font-semibold">
                 — Women Techmakers Ayacucho

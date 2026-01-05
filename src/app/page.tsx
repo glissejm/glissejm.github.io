@@ -1,10 +1,10 @@
 import { Hero } from "@/components/Hero";
 import { Speakers } from "@/components/Speakers";
-import { Volunteer } from "@/components/Volunteer";
+// import { Volunteer } from "@/components/Volunteer";
 import { Organizer } from "@/components/Organizer";
 import { Sponsors } from "@/components/Sponsors";
-import { Agenda } from "@/components/Agenda";
-import { Site } from "@/components/Site";
+// import { Agenda } from "@/components/Agenda";
+// import { Site } from "@/components/Site";
 
 export default function Home() {
   return (
