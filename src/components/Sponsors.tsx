@@ -113,7 +113,7 @@ export function Sponsors() {
                 {/* CTA Buttons con urgencia */}
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href="https://wa.link/vqkjny"
+                    href="https://wa.me/51931981255?text=Hola%2C%20quiero%20ser%20patrocinador%20del%20IWD%202026%20%22Break%20The%20Pattern%22%20de%20Women%20Techmakers%20Ayacucho.%20%C2%BFPodemos%20agendar%20una%20reuni%C3%B3n%3F"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl relative overflow-hidden"
@@ -233,7 +233,7 @@ export function Sponsors() {
                   </ul>
 
                   <a
-                    href="https://wa.link/vqkjny"
+                    href="https://wa.me/51931981255?text=Hola%2C%20quiero%20ser%20patrocinador%20del%20IWD%202026%20%22Break%20The%20Pattern%22%20y%20me%20interesa%20el%20plan%20${encodeURIComponent(plan.name)}"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full text-center py-3 rounded-xl font-semibold transition-all ${
@@ -253,7 +253,9 @@ export function Sponsors() {
                 ¿Necesitas un plan personalizado o apoyo en especie?
               </p>
               <a 
-                href="https://wa.link/vqkjny"
+                href="https://wa.me/51931981255?text=Hola%2C%20quiero%20ser%20patrocinador%20del%20IWD%202026%20%22Break%20The%20Pattern%22%20y%20me%20interesa%20un%20plan%20personalizado%20%C2%BFPodemos%20conversar%3F"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-cyan-500 transition-colors"
               >
                 <span>Hablemos de tu propuesta</span>
@@ -334,7 +336,7 @@ export function Sponsors() {
               Prioridad en ubicación de banners + Mención anticipada en campaña pre-evento
             </p>
             <a
-              href="https://wa.link/vqkjny"
+              href="https://wa.me/51931981255?text=Hola%2C%20quiero%20ser%20patrocinador%20del%20IWD%202026%20%22Break%20The%20Pattern%22%20y%20quiero%20confirmar%20mi%20participaci%C3%B3n%20como%20uno%20de%20los%20primeros%205%20sponsors."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-blue-600 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl"

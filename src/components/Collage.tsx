@@ -9,49 +9,55 @@ const Container = ({ children }: { children: React.ReactNode }) => (
 export function Collage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Array de fotos del evento 2025
+  // Array de fotos del evento 2025 - Actualiza con tus imágenes reales
   const photos = [
     {
       id: 1,
-      url: "/public/images/IMG_1.jpg", // Reemplaza con tus rutas reales
+      image: "/images/IMG_1.jpg", // Ruta real de imagen
       title: "Inauguración IWD 2025",
       description: "50+ asistentes en el evento principal",
-      category: "keynote"
+      category: "keynote",
+      color: "from-blue-500 to-cyan-400"
     },
     {
       id: 2,
-      url: "/images/IMG_2.jpg",
+      image: "/images/IMG_2.jpg",
       title: "Panel de Expertas",
       description: "11 speakers compartiendo conocimiento",
-      category: "speakers"
+      category: "speakers",
+      color: "from-purple-400 to-pink-400"
     },
     {
       id: 3,
-      url: "/images/IMG_3.jpg",
+      image: "/images/IMG_3.jpg",
       title: "Networking Tech",
       description: "Conexiones que transforman carreras",
-      category: "networking"
+      category: "networking",
+      color: "from-green-400 to-blue-500"
     },
     {
       id: 4,
-      url: "/images/IMG_1.jpg",
+      image: "/images/IMG_1.jpg",
       title: "Workshop Práctico",
       description: "Talleres de IA y desarrollo",
-      category: "workshop"
+      category: "workshop",
+      color: "from-orange-400 to-yellow-400"
     },
     {
       id: 5,
-      url: "/images/iwd2025/event-5.jpg",
+      image: "/images/iwd2025/sponsors.jpg",
       title: "Sponsors en Acción",
       description: "Marcas que apoyan la diversidad",
-      category: "sponsors"
+      category: "sponsors",
+      color: "from-red-400 to-pink-400"
     },
     {
       id: 6,
-      url: "/images/iwd2025/event-6.jpg",
+      image: "/images/iwd2025/comunidad.jpg",
       title: "Comunidad WTM",
       description: "80% participación femenina",
-      category: "community"
+      category: "community",
+      color: "from-indigo-400 to-purple-500"
     }
   ];
 
@@ -62,10 +68,20 @@ export function Collage() {
     { number: "5K+", label: "Alcance", icon: "📱" }
   ];
 
+  // Íconos para cada categoría
+  const categoryIcons: { [key: string]: string } = {
+    keynote: "🎯",
+    speakers: "🎤",
+    networking: "🤝",
+    workshop: "💡",
+    sponsors: "🏢",
+    community: "🌟"
+  };
+
   return (
     <section className="py-16 sm:py-20 bg-gradient-to-b from-white via-blue-50 to-cyan-50 relative overflow-hidden">
       {/* Background decorative */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-30">
+      <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
       </div>
@@ -111,13 +127,14 @@ export function Collage() {
               className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl shadow-2xl cursor-pointer transform hover:scale-[1.02] transition-all duration-500"
               onClick={() => setSelectedImage(0)}
             >
-              <div className="relative h-full min-h-[400px] bg-gradient-to-br from-blue-400 to-cyan-500">
-                {/* Placeholder image - replace with actual image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+              <div className={`relative h-full min-h-[400px] bg-gradient-to-br ${photos[0].color}`}>
+                {/* Imagen real o placeholder */}
+                <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white p-8">
-                    <div className="text-6xl mb-4">🎯</div>
+                    <div className="text-6xl mb-4">{categoryIcons[photos[0].category]}</div>
                     <h3 className="text-3xl font-bold mb-2">{photos[0].title}</h3>
                     <p className="text-lg opacity-90">{photos[0].description}</p>
+                    <p className="text-sm mt-4 opacity-75">🖼️ Añadir imagen real</p>
                   </div>
                 </div>
                 {/* Hover overlay */}
@@ -141,12 +158,13 @@ export function Collage() {
                 className="md:col-span-2 group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform hover:scale-[1.02] transition-all duration-500"
                 onClick={() => setSelectedImage(idx)}
               >
-                <div className="relative h-full min-h-[195px] bg-gradient-to-br from-cyan-400 to-blue-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                <div className={`relative h-full min-h-[195px] bg-gradient-to-br ${photos[idx].color}`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white p-6">
-                      <div className="text-4xl mb-3">🎤</div>
+                      <div className="text-4xl mb-3">{categoryIcons[photos[idx].category]}</div>
                       <h3 className="text-xl font-bold mb-1">{photos[idx].title}</h3>
                       <p className="text-sm opacity-90">{photos[idx].description}</p>
+                      <p className="text-xs mt-2 opacity-75">🖼️ Añadir imagen real</p>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -166,14 +184,13 @@ export function Collage() {
                 className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer transform hover:scale-105 transition-all duration-500"
                 onClick={() => setSelectedImage(idx)}
               >
-                <div className="relative h-full min-h-[195px] bg-gradient-to-br from-orange-400 to-red-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                <div className={`relative h-full min-h-[195px] bg-gradient-to-br ${photos[idx].color}`}>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white p-4">
-                      <div className="text-3xl mb-2">
-                        {idx === 3 ? "💡" : idx === 4 ? "🤝" : "🌟"}
-                      </div>
+                      <div className="text-3xl mb-2">{categoryIcons[photos[idx].category]}</div>
                       <h3 className="text-base font-bold mb-1">{photos[idx].title}</h3>
                       <p className="text-xs opacity-90">{photos[idx].description}</p>
+                      <p className="text-xs mt-2 opacity-75">🖼️ Imagen real</p>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
@@ -190,9 +207,12 @@ export function Collage() {
               <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10 text-center">
                 <div className="text-5xl mb-4">📸</div>
-                <h3 className="text-2xl font-bold mb-2">+50 Fotos</h3>
-                <p className="text-sm mb-4 opacity-90">Ver galería completa</p>
-                <div className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-50 transition-colors">
+                <h3 className="text-2xl font-bold mb-2">Galería 2025</h3>
+                <p className="text-sm mb-4 opacity-90">Ver fotos del evento</p>
+                <div 
+                  className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-50 transition-colors"
+                  onClick={() => setSelectedImage(0)}
+                >
                   <span>Explorar</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -251,16 +271,26 @@ export function Collage() {
             </div>
           </div>
 
-          {/* Bottom text */}
-          <div className="text-center mt-12">
-            <p className="text-slate-600 text-sm">
-              📸 <span className="font-semibold">Nota:</span> Reemplaza las rutas de imágenes en el código con tus fotos reales del IWD 2025
-            </p>
+          {/* Instructions for actual images */}
+          <div className="mt-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border border-cyan-200">
+            <h4 className="text-lg font-bold text-slate-800 mb-3">📸 Instrucciones para fotos reales:</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600">
+              <div>
+                <p className="font-semibold mb-1">1. Reemplaza las rutas:</p>
+                <code className="bg-slate-800 text-white px-2 py-1 rounded text-xs">
+                  image: "/images/iwd2025/inauguracion.jpg"
+                </code>
+              </div>
+              <div>
+                <p className="font-semibold mb-1">2. Añadir imágenes:</p>
+                <p>Crea la carpeta <code>/public/images/iwd2025/</code> y sube tus fotos</p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
 
-      {/* Modal Lightbox (opcional) */}
+      {/* Modal Lightbox */}
       {selectedImage !== null && (
         <div 
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
@@ -268,19 +298,30 @@ export function Collage() {
         >
           <div className="relative max-w-5xl w-full">
             <button 
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors"
-              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors z-50"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="bg-white rounded-2xl p-8">
+            <div className="bg-white rounded-2xl p-8 max-h-[80vh] overflow-y-auto">
               <div className="text-center">
-                <div className="text-6xl mb-4">🖼️</div>
+                <div className={`text-6xl mb-4 p-8 rounded-2xl bg-gradient-to-br ${photos[selectedImage].color}`}>
+                  {categoryIcons[photos[selectedImage].category]}
+                </div>
                 <h3 className="text-3xl font-bold text-slate-800 mb-2">{photos[selectedImage].title}</h3>
-                <p className="text-lg text-slate-600">{photos[selectedImage].description}</p>
-                <p className="text-sm text-slate-500 mt-4">Imagen del IWD Ayacucho 2025</p>
+                <p className="text-lg text-slate-600 mb-4">{photos[selectedImage].description}</p>
+                <div className="text-sm text-slate-500 p-4 bg-slate-50 rounded-lg">
+                  <p className="font-semibold mb-2">📁 Ruta de imagen configurada:</p>
+                  <code className="bg-slate-200 px-3 py-1 rounded">
+                    {photos[selectedImage].image}
+                  </code>
+                  <p className="mt-2">Reemplazar con foto real del IWD 2025</p>
+                </div>
               </div>
             </div>
           </div>
@@ -295,6 +336,9 @@ export function Collage() {
         .animate-gradient {
           background-size: 200% auto;
           animation: gradient 3s ease infinite;
+        }
+        .delay-1000 {
+          animation-delay: 1s;
         }
       `}</style>
     </section>
