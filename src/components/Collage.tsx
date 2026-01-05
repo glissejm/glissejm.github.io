@@ -270,23 +270,6 @@ export function Collage() {
               </div>
             </div>
           </div>
-
-          {/* Instructions for actual images */}
-          <div className="mt-8 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-6 border border-cyan-200">
-            <h4 className="text-lg font-bold text-slate-800 mb-3">📸 Instrucciones para fotos reales:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600">
-              <div>
-                <p className="font-semibold mb-1">1. Reemplaza las rutas:</p>
-                <code className="bg-slate-800 text-white px-2 py-1 rounded text-xs">
-                  image: &quot;/images/iwd2025/inauguracion.jpg&quot;
-                </code>
-              </div>
-              <div>
-                <p className="font-semibold mb-1">2. Añadir imágenes:</p>
-                <p>Crea la carpeta <code>/public/images/iwd2025/</code> y sube tus fotos</p>
-              </div>
-            </div>
-          </div>
         </div>
       </Container>
 
