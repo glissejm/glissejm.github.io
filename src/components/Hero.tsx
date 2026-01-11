@@ -52,16 +52,33 @@ export function Hero() {
           {/* Timer */}
           <Timer />
 
-          {/* Botón de registro */}
-          <div className="flex justify-center mt-10">
+          {/* Botones: registro y sponsors (alineados horizontalmente) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center mt-10 gap-6">
             <Button 
               href="https://forms.gle/cf6kCuWJjGyxXoW47" 
               className="group relative inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:from-blue-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl" 
               target="_blank"
             >
-              <span>¡Registrarse!</span>
+              <span>Quiero ser asistente</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
+
+            <Button 
+              href="#sponsors" 
+              className="group relative inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:from-blue-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <span>Quiero ser sponsor</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Button>
+          
+            <Button 
+              href="#speakers" 
+              className="group relative inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:from-blue-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <span>Quiero ser speaker</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Button>
+          
           </div>
 
           {/* Mensaje motivacional */}

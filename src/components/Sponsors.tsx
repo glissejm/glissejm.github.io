@@ -145,7 +145,7 @@ export function Sponsors() {
           {/* Planes de Patrocinio - Formato Pricing */}
           <div className="mb-12">
             <h4 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-2 text-center">
-              Planes de Inversión 2026
+              Tenemos opciones para que puedas elegir el patrocinio
             </h4>
             <p className="text-slate-600 text-center mb-8">Elige el nivel que mejor se adapte a tus objetivos</p>
             
@@ -154,7 +154,6 @@ export function Sponsors() {
                 { 
                   icon: "🏆", 
                   name: "Ada Lovelace",
-                  price: "S/ 300",
                   color: "from-yellow-400 to-amber-500",
                   borderColor: "border-yellow-400",
                   features: [
@@ -165,12 +164,11 @@ export function Sponsors() {
                     "Presentación 5-10 min"
                   ],
                   badge: "Máxima Visibilidad",
-                  popular: true
+                  popular: false
                 },
                 { 
                   icon: "🥈", 
                   name: "Grace Hopper",
-                  price: "S/ 200",
                   color: "from-slate-300 to-slate-500",
                   borderColor: "border-slate-400",
                   features: [
@@ -186,7 +184,6 @@ export function Sponsors() {
                 { 
                   icon: "🥉", 
                   name: "Margaret Hamilton",
-                  price: "S/ 100",
                   color: "from-orange-400 to-orange-600",
                   borderColor: "border-orange-400",
                   features: [
@@ -217,7 +214,6 @@ export function Sponsors() {
                     <div className={`text-xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent mb-2`}>
                       {plan.name}
                     </div>
-                    <div className="text-3xl font-bold text-slate-800 mb-1">{plan.price}</div>
                     <div className="text-xs text-slate-500">{plan.badge}</div>
                   </div>
 

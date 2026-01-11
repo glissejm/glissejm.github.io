@@ -11,13 +11,13 @@ interface Organizer {
 const organizers: Organizer[] = [
   {
     name: "Glisse Jorge",
-    role: "Backend Developer at BCP | WTM Ambasador",
+    role: "Backend Java Software Engineer",
     image: "/images/7.png",
     linkedin: "https://www.linkedin.com/in/glissejorge/",
   },
   {
     name: "Sihomara Ochoa",
-    role: "Msc. Ing. Software | WTM Ambasador",
+    role: "Msc. Ing. Software",
     image: "/images/12.png",
     linkedin: "https://www.linkedin.com/in/sihomara-sandy-ochoa-cisneros/",
   },
@@ -34,7 +34,7 @@ export function Organizer() {
               Organizadoras
             </h2>
             <p className="text-2xl text-slate-700">
-              Equipo de organización
+              Equipo organizador
             </p>
           </div>
 
@@ -89,7 +89,7 @@ function OrganizerCard({ organizer }: { organizer: Organizer }) {
 
         {/* WTM Badge */}
         <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-          WTM
+          WTM Ambassador
         </div>
       </div>
 
